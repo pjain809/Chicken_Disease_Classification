@@ -2,7 +2,7 @@ import os.path
 from CNN_Classifier.constants import *
 from CNN_Classifier.utils.common import read_yaml, create_directories
 from CNN_Classifier.entity.config_entity import (DataIngestionConfig, PrepareBaseModelConfig,
-                                                 PrepareCallbacksConfig, TrainingConfig)
+                                                 PrepareCallbacksConfig, TrainingConfig, EvaluationConfig)
 
 
 class ConfigurationManager:
@@ -73,3 +73,15 @@ class ConfigurationManager:
             params_image_size=params.IMAGE_SIZE
         )
         return training_config
+
+    def get_evaluation_config(self) -> EvaluationConfig:
+        os.makedirs(Path("artifacts/model_evaluation"), exist_ok=True)
+
+        evaluation_config = EvaluationConfig(
+            path_of_model=Path("artifacts/training/model.h5"),
+            training_data=Path("artifacts/data_ingestion/chicken-fecal-images"),
+            all_params=self.params,
+            params_batch_size=self.params.BATCH_SIZE,
+            params_image_size=self.params.IMAGE_SIZE
+        )
+        return evaluation_config
