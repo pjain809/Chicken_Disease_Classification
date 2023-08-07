@@ -12,10 +12,10 @@ class PrepareCallbacks:
 
     @property
     def _create_tb_callbacks(self):
-        timestamp = time.strftime("%Y-%m-%d-%H-%M-%S")
+        timestamp = time.strftime("%Y_%m_%d_%H_%M_%S")
         tb_running_log_dir = os.path.join(
             self.config.tensorboard_root_log_dir,
-            f"Tb_Logs_<{timestamp}>"
+            f"Tb_Logs_{timestamp}"
         )
         return tf.keras.callbacks.TensorBoard(log_dir=tb_running_log_dir)
 
