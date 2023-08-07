@@ -1,5 +1,4 @@
 import os.path
-
 from CNN_Classifier.constants import *
 from CNN_Classifier.utils.common import read_yaml, create_directories
 from CNN_Classifier.entity.config_entity import (DataIngestionConfig,
