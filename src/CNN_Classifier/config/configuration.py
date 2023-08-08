@@ -23,8 +23,7 @@ class ConfigurationManager:
             root_dir=config.root_dir,
             source_URL=config.source_URL,
             local_data_file=config.local_data_file,
-            unzip_dir=config.unzip_dir
-        )
+            unzip_dir=config.unzip_dir)
         return data_ingestion_config
 
     def get_prepare_base_model_config(self) -> PrepareBaseModelConfig:
@@ -39,8 +38,7 @@ class ConfigurationManager:
             params_learning_rate=self.params.LEARNING_RATE,
             params_include_top=self.params.INCLUDE_TOP,
             params_classes=self.params.CLASSES,
-            params_weights=self.params.WEIGHTS
-        )
+            params_weights=self.params.WEIGHTS)
         return prepare_base_model_config
 
     def get_prepare_callbacks_config(self) -> PrepareCallbacksConfig:
@@ -52,8 +50,7 @@ class ConfigurationManager:
         prepare_callbacks_config = PrepareCallbacksConfig(
             root_dir=Path(config.root_dir),
             tensorboard_root_log_dir=Path(config.tensorboard_root_log_dir),
-            checkpoint_model_filepath=Path(config.checkpoint_model_filepath)
-        )
+            checkpoint_model_filepath=Path(config.checkpoint_model_filepath))
         return prepare_callbacks_config
     
     def get_training_config(self) -> TrainingConfig:
@@ -70,8 +67,7 @@ class ConfigurationManager:
             params_epochs=params.EPOCHS,
             params_batch_size=params.BATCH_SIZE,
             params_is_augmentation=params.AUGMENTATION,
-            params_image_size=params.IMAGE_SIZE
-        )
+            params_image_size=params.IMAGE_SIZE)
         return training_config
 
     def get_evaluation_config(self) -> EvaluationConfig:
@@ -82,6 +78,5 @@ class ConfigurationManager:
             training_data=Path("artifacts/data_ingestion/chicken-fecal-images"),
             all_params=self.params,
             params_batch_size=self.params.BATCH_SIZE,
-            params_image_size=self.params.IMAGE_SIZE
-        )
+            params_image_size=self.params.IMAGE_SIZE)
         return evaluation_config
