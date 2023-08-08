@@ -164,3 +164,6 @@ template.py
 
 # Pipelien Results
 artifacts/*
+
+# UI Beautify
+static/
