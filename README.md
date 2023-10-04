@@ -1,5 +1,8 @@
 # Chicken-Disease-Classification--Project
 
+## Description
+
+Utilizing CNN-based image classification, this project discerns Coccidiosis disease in chickens through fecal image analysis. The endpoint, seamlessly accessible via a user interface, offers accurate and efficient detection, empowering poultry farmers with vital insights for timely disease management and ensuring optimal avian health.
 
 ## Workflows
 
